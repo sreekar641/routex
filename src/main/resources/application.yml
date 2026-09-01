@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: routex
+
+routex:
+  routes:
+    - id: sample-kafka
+      from: "kafka:input-topic?brokers=${kafka.bootstrap-servers}"
+      actionBean: sampleAction
+      to: "log:sample?level=INFO"
+
+kafka:
+  bootstrap-servers: "localhost:9092"
+
+# Expose management endpoints on port 8080 by default
+server:
+  port: 8080

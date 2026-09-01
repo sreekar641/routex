@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.routex</groupId>
+	<artifactId>routex</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name/>
+	<description/>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- Camel BOM -->
+			<dependency>
+				<groupId>org.apache.camel.springboot</groupId>
+				<artifactId>camel-spring-boot-bom</artifactId>
+				<version>${camel-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- Spring Boot BOM -->
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${spring-boot-version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<properties>
+		<java.version>21</java.version>
+		<camel-version>4.22.0</camel-version>
+		<spring-boot-version>4.1.1</spring-boot-version>
+	</properties>
+
+	<dependencies>
+
+		<!-- Spring Boot -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- Spring Web -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!-- Lombok (used by some existing model classes) -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.30</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- Apache Camel -->
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- Apache Camel Kafka -->
+		<dependency>
+			<groupId>org.apache.camel.springboot</groupId>
+			<artifactId>camel-kafka-starter</artifactId>
+		</dependency>
+
+		<!-- Configuration metadata -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+
+		<!-- Tests -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.10.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
