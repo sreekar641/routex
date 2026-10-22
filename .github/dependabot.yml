@@ -1,0 +1,44 @@
+
+# .github/dependabot.yml
+
+version: 2
+
+updates:
+  # Java / Spring Boot Maven dependencies
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Kolkata"
+
+    # Limit the number of open dependency update PRs
+    open-pull-requests-limit: 10
+
+    # Group compatible non-major updates
+    groups:
+      spring-boot:
+        patterns:
+          - "org.springframework.boot:*"
+          - "org.springframework:*"
+        update-types:
+          - "minor"
+          - "patch"
+
+      other-dependencies:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+
+    # Include GitHub Actions version updates
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "Asia/Kolkata"
+    open-pull-requests-limit: 5
